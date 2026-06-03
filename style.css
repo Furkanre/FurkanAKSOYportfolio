@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+img {
+    border-radius: 50px;
+}
 :root {
     --arka-plan: #0A192F;
     --kart: #112240;
@@ -44,15 +46,15 @@ header {
 }
 
 .logo {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--vurgu);
-    color: var(--lacivert);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
+}
+
+.logo img {
+    height: 42px;
+    width: auto;
+    display: block;
 }
 
 nav ul {
@@ -78,11 +80,11 @@ nav a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -8px;
     width: 0;
     height: 2px;
     background: var(--vurgu);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 nav a.active {
@@ -114,6 +116,10 @@ nav a.active::after {
     padding: 0;
 }
 
+.tema-butonu i {
+    line-height: 1;
+}
+
 .menu-butonu {
     display: none;
     font-size: 24px;
@@ -139,26 +145,31 @@ section {
 }
 
 .profil-dairesi {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 25px;
     border-radius: 50%;
-    color: var(--vurgu);
-    background: rgba(100, 181, 246, 0.12);
-    box-shadow: 0 0 35px rgba(100, 181, 246, 0.15);
+    background: rgba(100, 181, 246, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 34px;
-    font-weight: 800;
+    box-shadow: 0 0 40px rgba(100, 181, 246, 0.15);
+}
+
+.profil-dairesi img {
+    width: 90px;
+    height: auto;
+    display: block;
 }
 
 .ust-yazi {
-    color: var(--soluk-yazi);
-    font-size: 13px;
-    letter-spacing: 3px;
+    color: #8FA8C7;
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .ana-sayfa h1 {
@@ -231,11 +242,56 @@ section {
 .yetenek-karti,
 .proje-karti,
 .zaman-karti,
-form {
+form,
+.proje-onizleme {
     background: var(--kart);
     border-radius: 22px;
     box-shadow: 0 20px 45px var(--golge);
     transition: 0.3s;
+}
+
+.proje-onizleme {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 26px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.proje-onizleme img {
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 22px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.proje-onizleme img.gorunur {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.proje-onizleme h3,
+.proje-onizleme p {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.proje-onizleme h3 {
+    margin-bottom: 12px;
+}
+
+.proje-onizleme p {
+    color: var(--soluk-yazi);
+    line-height: 1.8;
 }
 
 .hakkimda-karti {
@@ -298,6 +354,10 @@ form {
     height: 100%;
     background: var(--vurgu);
     border-radius: 20px;
+}
+
+.proje-karti {
+    cursor: pointer;
 }
 
 .proje-karti i {
@@ -473,7 +533,7 @@ footer {
     justify-content: center;
     font-weight: 800;
     cursor: pointer;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .yukari-cik.aktif {
@@ -504,11 +564,6 @@ body.acik-tema {
 body.acik-tema header {
     background: rgba(245, 249, 255, 0.96);
     box-shadow: 0 10px 35px rgba(10, 25, 47, 0.10);
-}
-
-body.acik-tema .logo {
-    background: var(--lacivert);
-    color: #FFFFFF;
 }
 
 body.acik-tema .tema-butonu {
@@ -573,6 +628,15 @@ body.acik-tema .zaman-nokta {
         grid-template-columns: 1fr;
     }
 
+    .proje-onizleme {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .proje-onizleme img {
+        max-width: 100%;
+    }
+
     .zaman-cizelgesi {
         min-height: auto;
         padding-left: 38px;
@@ -610,5 +674,356 @@ body.acik-tema .zaman-nokta {
 
     section {
         padding: 90px 6%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .ana-sayfa {
+        min-height: 90vh;
+        padding-top: 80px;
+    }
+
+    .ana-sayfa h1 {
+        font-size: clamp(28px, 5vw, 48px);
+    }
+
+    .ana-sayfa p {
+        font-size: 15px;
+    }
+
+    .butonlar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .buton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profil-dairesi {
+        width: 120px;
+        height: 120px;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .bolum-basligi h2 {
+        font-size: 26px;
+    }
+
+    .yetenek-karti,
+    .proje-karti {
+        padding: 20px;
+    }
+
+    .proje-onizleme {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .proje-onizleme img {
+        border-radius: 16px;
+        margin-bottom: 16px;
+    }
+
+    .hakkimda-karti {
+        padding: 20px;
+    }
+
+    .hakkimda-karti p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    form {
+        padding: 20px;
+        gap: 12px;
+    }
+
+    input,
+    textarea {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 4%;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    nav {
+        width: 85%;
+        padding: 30px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .ust-sag {
+        gap: 10px;
+    }
+
+    .tema-butonu {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .menu-butonu {
+        font-size: 22px;
+    }
+
+    .ana-sayfa {
+        min-height: 85vh;
+        padding-top: 70px;
+    }
+
+    .ana-icerik {
+        max-width: 100%;
+    }
+
+    .profil-dairesi {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .profil-dairesi img {
+        width: 70px;
+    }
+
+    .ust-yazi {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+    }
+
+    .ana-sayfa h1 {
+        font-size: clamp(24px, 4vw, 36px);
+        margin-bottom: 14px;
+    }
+
+    .ana-sayfa p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .butonlar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buton {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 70px 4%;
+    }
+
+    .bolum-basligi {
+        margin-bottom: 40px;
+    }
+
+    .bolum-basligi span {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .bolum-basligi h2 {
+        font-size: 22px;
+        margin-top: 6px;
+    }
+
+    .yetenekler-grid,
+    .projeler-grid {
+        gap: 16px;
+    }
+
+    .yetenek-karti,
+    .proje-karti {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .yetenek-baslik h3,
+    .proje-karti h3 {
+        font-size: 16px;
+    }
+
+    .proje-karti i {
+        font-size: 28px;
+        margin-bottom: 14px;
+    }
+
+    .proje-karti p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .proje-onizleme {
+        padding: 14px;
+        margin-bottom: 14px;
+        gap: 12px;
+    }
+
+    .proje-onizleme img {
+        border-radius: 14px;
+        margin-bottom: 12px;
+    }
+
+    .proje-onizleme h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .proje-onizleme p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .hakkimda-karti {
+        padding: 16px;
+        max-width: 100%;
+    }
+
+    .hakkimda-karti p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+
+    .zaman-cizelgesi {
+        padding-left: 32px;
+        min-height: auto;
+    }
+
+    .zaman-cizelgesi::before {
+        left: 12px;
+        width: 2px;
+    }
+
+    .zaman-karti {
+        width: 100%;
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .tarih {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin-bottom: 12px;
+    }
+
+    .zaman-karti h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .zaman-karti h4 {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .zaman-karti p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .zaman-nokta {
+        left: 12px;
+        width: 28px;
+        height: 28px;
+    }
+
+    form {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    input,
+    textarea {
+        padding: 11px 14px;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 25px;
+    }
+
+    footer {
+        padding: 20px 4%;
+        font-size: 13px;
+    }
+
+    .yukari-cik {
+        width: 42px;
+        height: 42px;
+        right: 16px;
+        bottom: 16px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .ana-sayfa h1 {
+        font-size: 20px;
+    }
+
+    .ana-sayfa p {
+        font-size: 13px;
+    }
+
+    .buton {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .bolum-basligi h2 {
+        font-size: 18px;
+    }
+
+    .yetenek-karti,
+    .proje-karti {
+        padding: 12px;
+    }
+
+    .proje-karti p {
+        font-size: 12px;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
     }
 }

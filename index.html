@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -14,7 +15,9 @@
 <body>
 
 <header>
-    <a href="#anasayfa" class="logo">FA</a>
+    <a href="#anasayfa" class="logo">
+        <img src="1.png" alt="Furkan Aksoy Logo">
+    </a>
 
     <nav>
         <ul>
@@ -40,10 +43,13 @@
 
 <section class="ana-sayfa" id="anasayfa">
     <div class="ana-icerik">
-        <div class="profil-dairesi">FA</div>
+
+        <div class="profil-dairesi">
+            <img src="1.png" alt="Furkan Aksoy Logo">
+        </div>
 
         <span class="ust-yazi">
-            MOBİL TEKNOLOJİLER • AĞ SİSTEMLERİ • YAZILIM GELİŞTİRME
+            HELP DESK • SOFTWARE DEVELOPMENT
         </span>
 
         <h1>
@@ -107,47 +113,74 @@
 
     <div class="yetenekler-grid">
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>HTML5</h3><span>90%</span></div>
+            <div class="yetenek-baslik">
+                <h3>HTML5</h3>
+                <span>90%</span>
+            </div>
             <div class="ilerleme"><span style="width:90%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>CSS3</h3><span>85%</span></div>
+            <div class="yetenek-baslik">
+                <h3>CSS3</h3>
+                <span>85%</span>
+            </div>
             <div class="ilerleme"><span style="width:85%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>JavaScript</h3><span>75%</span></div>
+            <div class="yetenek-baslik">
+                <h3>JavaScript</h3>
+                <span>75%</span>
+            </div>
             <div class="ilerleme"><span style="width:75%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>Responsive Tasarım</h3><span>88%</span></div>
+            <div class="yetenek-baslik">
+                <h3>Responsive Tasarım</h3>
+                <span>88%</span>
+            </div>
             <div class="ilerleme"><span style="width:88%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>Ağ Teknolojileri</h3><span>70%</span></div>
+            <div class="yetenek-baslik">
+                <h3>Ağ Teknolojileri</h3>
+                <span>70%</span>
+            </div>
             <div class="ilerleme"><span style="width:70%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>Mobil Teknolojiler</h3><span>80%</span></div>
+            <div class="yetenek-baslik">
+                <h3>Donanım</h3>
+                <span>80%</span>
+            </div>
             <div class="ilerleme"><span style="width:80%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>İngilizce</h3><span>95%</span></div>
+            <div class="yetenek-baslik">
+                <h3>İngilizce</h3>
+                <span>95%</span>
+            </div>
             <div class="ilerleme"><span style="width:95%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>Arayüz Tasarımı</h3><span>82%</span></div>
+            <div class="yetenek-baslik">
+                <h3>Arayüz Tasarımı</h3>
+                <span>82%</span>
+            </div>
             <div class="ilerleme"><span style="width:82%"></span></div>
         </div>
 
         <div class="yetenek-karti">
-            <div class="yetenek-baslik"><h3>GitHub Kullanımı</h3><span>78%</span></div>
+            <div class="yetenek-baslik">
+                <h3>GitHub Kullanımı</h3>
+                <span>78%</span>
+            </div>
             <div class="ilerleme"><span style="width:78%"></span></div>
         </div>
     </div>
@@ -159,23 +192,29 @@
         <h2>Projeler</h2>
     </div>
 
+    <div class="proje-onizleme">
+        <img id="projeOnizlemeResmi" src="todolistuyg.webp" alt="Örnek proje görseli">
+        <h3 id="projeOnizlemeBaslik">To Do List Uygulaması</h3>
+        <p id="projeOnizlemeAciklama">Örnek proje görselidir</p>
+    </div>
+
     <div class="projeler-grid">
-        <div class="proje-karti">
-            <i class="fa-solid fa-user-tie"></i>
-            <h3>Kişisel Portfolyo Web Sitesi</h3>
-            <p>HTML5, CSS3 ve JavaScript kullanılarak geliştirilen modern, mobil uyumlu kişisel özgeçmiş web sitesi.</p>
-        </div>
-
-        <div class="proje-karti">
+        <div class="proje-karti" data-image="todolistuyg.webp" data-title="To Do List Uygulaması" data-description="Örnek proje görselidir">
             <i class="fa-solid fa-list-check"></i>
-            <h3>Görev Yönetim Uygulaması</h3>
-            <p>Kullanıcıların görevlerini ekleyip takip edebildiği basit ve kullanışlı JavaScript tabanlı uygulama tasarımı.</p>
+            <h3>To Do List Uygulaması</h3>
+            <p>Kullanıcıların görev ekleyebildiği, düzenleyebildiği ve tamamlananları takip edebildiği JavaScript tabanlı bir örnek proje.</p>
         </div>
 
-        <div class="proje-karti">
-            <i class="fa-solid fa-store"></i>
-            <h3>Ürün Listeleme Arayüzü</h3>
-            <p>E-ticaret mantığına uygun, mobil uyumlu ve kart yapılı ürün listeleme arayüzü çalışması.</p>
+        <div class="proje-karti" data-image="kisiselfinans.png" data-title="Kişisel Finans" data-description="Örnek proje görselidir">
+            <i class="fa-solid fa-wallet"></i>
+            <h3>Kişisel Finans</h3>
+            <p>Bütçe takibi, gelir-gider yönetimi ve kişisel finans planlama özelliklerine odaklanan proje.</p>
+        </div>
+
+        <div class="proje-karti" data-image="Stokuyg.png" data-title="Stok Takip Uygulaması" data-description="Örnek proje görselidir">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <h3>Stok Takip Uygulaması</h3>
+            <p>Ürün stoklarını yönetmeye yardımcı olan, sevkiyat ve envanter kontrolü sağlayan arayüz çalışması.</p>
         </div>
     </div>
 </section>
@@ -190,8 +229,11 @@
         <div class="zaman-karti sol kart-1">
             <span class="tarih">2024 - Günümüz</span>
             <h3>Nişantaşı Üniversitesi</h3>
-            <h4>Mobil Teknolojileri Programı</h4>
-            <p>Mobil teknolojiler, web geliştirme ve ağ teknolojileri alanlarında akademik eğitimime devam ediyorum.</p>
+            <h4>Mobil Teknolojileri</h4>
+            <p>
+                Mobil teknolojiler, web geliştirme ve ağ teknolojileri alanlarında
+                akademik eğitimime devam ediyorum.
+            </p>
         </div>
 
         <div class="zaman-nokta nokta-1"></div>
@@ -200,7 +242,10 @@
             <span class="tarih">2023 - 2024</span>
             <h3>IT Stajyeri</h3>
             <h4>İnnova Bilişim Çözümleri A.Ş.</h4>
-            <p>Kurumsal bir yapıda teknik destek süreçlerini deneyimledim, donanım ve yazılım sorunları üzerine çalışmalar yaptım.</p>
+            <p>
+                Kurumsal bir yapıda teknik destek süreçlerini deneyimledim,
+                donanım ve yazılım sorunları üzerine çalışmalar yaptım.
+            </p>
         </div>
 
         <div class="zaman-nokta nokta-2"></div>
@@ -209,7 +254,10 @@
             <span class="tarih">2020 - 2024</span>
             <h3>Bilişim Teknolojileri</h3>
             <h4>Profilo Mesleki ve Teknik Anadolu Lisesi</h4>
-            <p>Yazılım temelleri, algoritma mantığı, veritabanı ve bilişim teknolojileri alanlarında teknik eğitim aldım.</p>
+            <p>
+                Yazılım temelleri, algoritma mantığı, veritabanı ve bilişim
+                teknolojileri alanlarında teknik eğitim aldım.
+            </p>
         </div>
 
         <div class="zaman-nokta nokta-3"></div>
@@ -234,6 +282,7 @@
     <p>© 2026 Furkan Aksoy. Tüm Hakları Saklıdır.</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
+```
